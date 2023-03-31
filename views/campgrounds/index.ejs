@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campgrounds</title>
+</head>
+<body> -->
+    <% layout('/layouts/Boilerplate') %>
+    <h1>all Campgrounds</h1>
+    <div class="">
+        <a href="/campgrounds/new"> add new Campground</a>
+    </div>
+    <!-- <ul> -->
+        <% for( let campground of campgrounds) { %>
+           <div class="card">
+            <div class="row">
+                <div class="col-md-4">
+                    <%if(campground.images.length) {%>
+                        <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                        <% }else {%>
+                        <img class="img-fluid" alt=""
+                            src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/project/lz8jjv2gyynjil7lswf4.png">
+                        <% } %>
+                </div>
+                <!-- <div class="col-md-4">
+                    <img src="<%= campground.image %>" alt="" class="img-fluid">
+                </div> -->
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= campground.title %>
+                        </h5>
+                        <p class="card-text">
+                            <%= campground.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= campground.location %>
+                            </small>
+                        </p>
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">view <%= campground.title %></a>
+                    </div>
+                </div>
+            </div>
+           </div>
+        <% } %>
+    <!-- </ul> -->
+  <!-- why do we use ._id .. ? -->
+    
+<!-- </body>
+</html> -->
